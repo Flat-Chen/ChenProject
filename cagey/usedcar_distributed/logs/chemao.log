@@ -1,0 +1,54 @@
+2018-05-14 10:00:04 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.memusage.MemoryUsage',
+ 'scrapy.extensions.logstats.LogStats',
+ 'ganji.extensions.RedisSpiderSmartIdleClosedExensions']
+2018-05-14 10:00:04 [chemao] INFO: Reading start URLs from redis key 'chemao' (batch size: 1, encoding: utf-8
+2018-05-14 10:00:04 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'ganji.rotate_useragent.SeleniumMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'ganji.rotate_useragent.ProxyMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-05-14 10:00:04 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-05-14 10:24:01 [twisted] CRITICAL: Unhandled error in Deferred:
+2018-05-14 10:24:01 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/twisted/internet/defer.py", line 1386, in _inlineCallbacks
+    result = g.send(result)
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/scrapy/crawler.py", line 80, in crawl
+    self.engine = self._create_engine()
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/scrapy/crawler.py", line 105, in _create_engine
+    return ExecutionEngine(self, lambda _: self.stop())
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/scrapy/core/engine.py", line 70, in __init__
+    self.scraper = Scraper(crawler)
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/scrapy/core/scraper.py", line 71, in __init__
+    self.itemproc = itemproc_cls.from_crawler(crawler)
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/scrapy/middleware.py", line 58, in from_crawler
+    return cls.from_settings(crawler.settings, crawler)
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/scrapy/middleware.py", line 40, in from_settings
+    mw = mwcls()
+  File "/home/mywork/project_usedcar/usedcar_distributed/ganji/pipelines.py", line 42, in __init__
+    for i in self.collection.find():
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/pymongo/cursor.py", line 1114, in next
+    if len(self.__data) or self._refresh():
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/pymongo/cursor.py", line 1056, in _refresh
+    self.__max_await_time_ms))
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/pymongo/cursor.py", line 928, in __send_message
+    helpers._check_command_response(doc['data'][0])
+  File "/root/.virtualenvs/spider_py3/lib/python3.6/site-packages/pymongo/helpers.py", line 207, in _check_command_response
+    raise CursorNotFound(errmsg, code, response)
+pymongo.errors.CursorNotFound: Cursor not found, cursor id: 99500023000

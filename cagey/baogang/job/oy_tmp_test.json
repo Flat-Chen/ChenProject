@@ -1,0 +1,106 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mongodbreader", 
+                    "parameter": {
+                        "address": ["180.167.80.118:2502"],
+                        "collectionName": "ouyeel", 
+                        "column": [{
+						    "index":0,
+						    "name": "_id",
+						    "type": "string"
+						  }, {
+						    "index":1,
+						    "name": "store_city_name",
+						    "type": "string"
+						  }, {
+						    "index":2,
+						    "name": "spec",
+						    "type": "string"
+						  }, {
+						    "index":3,
+						    "name": "price",
+						    "type": "string"
+						  }, {
+						    "index":4,
+						    "name": "product_name",
+						    "type": "string"
+						  }, {
+						    "index":5,
+						    "name": "sourceid",
+						    "type": "long"
+						  }, {
+						    "index":6,
+						    "name": "pack_code",
+						    "type": "string"
+						  }, {
+						    "index":7,
+						    "name": "grabtime",
+						    "type": "long"
+						  }, {
+						    "index":8,
+						    "name": "provider_name",
+						    "type": "string"
+						  }], 
+                        "dbName": "baogang", 
+                        "userName": "ouyeel",
+                        "userPassword": "@WSX3edc"
+                    }
+                }, 
+                "writer": {
+                    "name": "mysqlwriter", 
+                    "parameter": {
+                        "column": [
+						    "_id",
+						    "store_city_name",
+						    "spec",
+						    "price",
+						    "product_name",
+						    "sourceid",
+						    "pack_code",
+						    "grabtime",
+						    "provider_name"
+				  	     ],
+					    "connection":[{
+						"jdbcUrl":"jdbc:mysql://120.27.216.150:3306/baogang??useUnicode=true&characterEncoding=utf8",
+						"table":["ouyeel"]	
+					    }],
+
+					"session": [
+                        	"set session sql_mode='ANSI'"
+                        ],
+                        "username": "root", 
+                        "password": "Datauser@2017",
+					"writeMode": "insert"
+                    }
+                },
+				"transformer": [
+                    {
+                        "name": "dx_filter",
+                        "parameter":
+                            {
+                            "columnIndex":7,
+                            "paras":[">","2019-09-23 00:00:00"]
+                            }
+                    },
+					{
+                        "name": "dx_replace",
+                        "parameter":
+                            {
+                            "columnIndex":8,
+                            "paras":["3","4","****"]
+                            }
+                    }
+				]
+
+            }
+        ], 
+        "setting": {
+            "speed": {
+                "channel": "2"
+            }
+        }
+    }
+}

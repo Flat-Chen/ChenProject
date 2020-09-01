@@ -1,0 +1,107 @@
+{
+	"job": {
+		"setting": {
+            "speed": {
+                 "channel": 3
+            },
+            "errorLimit": {
+                "record": 0,
+                "percentage": 0.02
+            }
+        },
+		"content": [
+			{
+				"reader": {
+					"name": "mysqlreader",
+					"parameter": {
+						"column": ["_id",
+									 "comType",
+									 "comName",
+									 "comAddress",
+									 "vip_type",
+									 "vip_year",
+									 "comTrade",
+									 "comProducts",
+									 "area_auth",
+									 "debao_auth",
+									 "comIndex",
+									 "kind",
+									 "label_one",
+									 "label_two",
+									 "title",
+									 "infoNum",
+									 "type",
+									 "quality",
+									 "number",
+									 "sale_price",
+									 "public_time",
+									 "market",
+									 "linkMan",
+									 "mobile",
+									 "comPhone",
+									 "info",
+									 "isvip",
+									 "list_url",
+									 "url",
+									 "grabtime"],
+						"connection": [
+							{
+								"jdbcUrl": ["jdbc:mysql://180.167.80.118:2502/baogang??useUnicode=true&characterEncoding=utf8"],
+								"table": ["feijiu_all"]
+							}
+						],
+						"password": "Baogang@2019",
+						"username": "baogang"
+					}
+				},
+				"writer": {
+					"name": "mysqlwriter",
+					"parameter": {
+						"column": ["_id",
+									 "comType",
+									 "comName",
+									 "comAddress",
+									 "vip_type",
+									 "vip_year",
+									 "comTrade",
+									 "comProducts",
+									 "area_auth",
+									 "debao_auth",
+									 "comIndex",
+									 "kind",
+									 "label_one",
+									 "label_two",
+									 "title",
+									 "infoNum",
+									 "type",
+									 "quality",
+									 "number",
+									 "sale_price",
+									 "public_time",
+									 "market",
+									 "linkMan",
+									 "mobile",
+									 "comPhone",
+									 "info",
+									 "isvip",
+									 "list_url",
+									 "url",
+									 "grabtime"],
+						"connection": [
+							{
+								"jdbcUrl": "jdbc:mysql://127.0.0.1:3306/baogang??useUnicode=true&characterEncoding=utf8",
+								"table": ["fiejiu_all"]
+							}
+						],
+                      "session": [
+                        	"set session sql_mode='ANSI'"
+                        ],
+                        "username": "root",
+                        "password": "Baogang@2019",
+					"writeMode": "insert"
+					}
+				}
+			}
+		]
+	}
+}
