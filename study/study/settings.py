@@ -1,4 +1,4 @@
-# Scrapy settings for Unicdata project
+# Scrapy settings for study project
 #
 # For simplicity, this file contains only settings considered important or
 # commonly used. You can find more settings consulting the documentation:
@@ -7,14 +7,14 @@
 #     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #     https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 
-BOT_NAME = 'Unicdata'
+BOT_NAME = 'study'
 
-SPIDER_MODULES = ['Unicdata.spiders']
-NEWSPIDER_MODULE = 'Unicdata.spiders'
+SPIDER_MODULES = ['study.spiders']
+NEWSPIDER_MODULE = 'study.spiders'
 
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
-#USER_AGENT = 'Unicdata (+http://www.yourdomain.com)'
+#USER_AGENT = 'study (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
 ROBOTSTXT_OBEY = False
@@ -45,13 +45,13 @@ ROBOTSTXT_OBEY = False
 # Enable or disable spider middlewares
 # See https://docs.scrapy.org/en/latest/topics/spider-middleware.html
 #SPIDER_MIDDLEWARES = {
-#    'Unicdata.middlewares.UnicdataSpiderMiddleware': 543,
+#    'study.middlewares.StudySpiderMiddleware': 543,
 #}
 
 # Enable or disable downloader middlewares
 # See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html
 #DOWNLOADER_MIDDLEWARES = {
-#    'Unicdata.middlewares.UnicdataDownloaderMiddleware': 543,
+#    'study.middlewares.StudyDownloaderMiddleware': 543,
 #}
 
 # Enable or disable extensions
@@ -63,7 +63,7 @@ ROBOTSTXT_OBEY = False
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 #ITEM_PIPELINES = {
-#    'Unicdata.pipelines.UnicdataPipeline': 300,
+#    'study.pipelines.StudyPipeline': 300,
 #}
 
 # Enable and configure the AutoThrottle extension (disabled by default)

@@ -116,4 +116,4 @@ class ChexiuspiderSpider(scrapy.Spider):
                 yield item
 
         except:
-            pass
+            ss
